@@ -64,15 +64,15 @@ def addFile():
     image_path=filename
 
     img=Image.open(image_path)
-    photo=ImageTk.PhotoImage(img.resize((420,400),Image.ANTIALIAS))
+    photo=ImageTk.PhotoImage(img.resize((420,390),Image.ANTIALIAS))
         
     label=tk.Label(image_frame,image=photo)
     label.image=photo
-    label.pack()
+    label.place(x=0,y=0)
 
     
 
-result_font=font.Font(family='Times New Roman',size=37)
+result_font=font.Font(family='Times New Roman',size=40)
 def identify():
     for widget in result_frame.winfo_children():
         widget.destroy()
@@ -85,7 +85,7 @@ Canvas=tk.Canvas(root,height=600,width=600,bg="#f0eff0")
 Canvas.pack()
 
 image_frame=tk.Frame(root,bg="white")
-image_frame.place(relwidth=0.6666,relheight=0.52,relx=0.15,rely=0.1)
+image_frame.place(relwidth=0.6666,relheight=0.6,relx=0.15,rely=0.1)
 
 # upload_image=Image.open("D:\Machine learning\projects\dog Breed Classification\gui\data\upload.png")
 # upload_photo=ImageTk.PhotoImage(upload_image,Image.ANTIALIAS)
@@ -99,29 +99,29 @@ f=font.Font(family='Times New Roman',size=13)
 
 
 addimage_frame=tk.Frame(root,bg="#f0eff0")
-addimage_frame.place(x=145,y=530,width=100,h=50)
+addimage_frame.place(x=145,y=550,width=100,h=50)
 addimage_label=tk.Label(addimage_frame,text="Add Image",font=f)
 addimage_label.place(x=0,y=0)
 addimage_pic=Image.open("D:\Machine learning\projects\dog Breed Classification\gui\data\Button-Add-1-512.webp")
 addimage_pic=ImageTk.PhotoImage(addimage_pic.resize((60,60),Image.ANTIALIAS))
 openFile=tk.Button(root,text="Add Image",padx=5,pady=5,command=addFile,width=60,height=60,font=f,borderwidth=0,image=addimage_pic)
-openFile.place(x=150,y=460)
+openFile.place(x=150,y=470)
 # openFile.pack()
 
 
 identify_frame=tk.Frame(root,bg="#f0eff0")
-identify_frame.place(x=360,y=530,width=100,h=50)
+identify_frame.place(x=360,y=550,width=100,h=50)
 identify_label=tk.Label(identify_frame,text="Identify?",font=f)
 identify_label.place(x=0,y=0)
 identify_pic=Image.open("D:\Machine learning\projects\dog Breed Classification\gui\data\search-button-png-image-free-download.png")
 identify_pic=ImageTk.PhotoImage(identify_pic.resize((55,55),Image.ANTIALIAS))
 Identify=tk.Button(root,text="Identify",padx=5,pady=5,command=identify,width=55,height=55,font=f,borderwidth=0,image=identify_pic)
-Identify.place(x=360,y=460)
+Identify.place(x=360,y=480)
 # Identify.pack()
 
-title_font=font.Font(family="Times New Roman",size=20)
+title_font=font.Font(family="Times New Roman",size=15)
 title_frame=tk.Frame(root,bg="#f0eff0")
-title_frame.place(x=10,y=10,width=600,height=50)
+title_frame.place(x=60,y=10,width=500,height=20)
 title_label=tk.Label(title_frame,text="Know the dog breed out of 70 breeds in seconds",font=title_font)
 title_label.place(x=30,y=0)
 
